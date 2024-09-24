@@ -37,7 +37,7 @@ $additional_data = isset($data['additional_data']) ? json_encode($data['addition
 try {
     // Insertar en la base de datos
     $stmt = $conn->prepare("
-        INSERT INTO logs (application_name, error_message, error_level, file, line, user_id, additional_data)
+        INSERT INTO logs_errors (application_name, error_message, error_level, file, line, user_id, additional_data)
         VALUES (:application_name, :error_message, :error_level, :file, :line, :user_id, :additional_data)
     ");
     $stmt->execute([
