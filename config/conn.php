@@ -2,9 +2,16 @@
 // Cargar el autoload de Composer, que incluye la librería phpdotenv
 require_once '../vendor/autoload.php';  // Correcta ruta hacia vendor/autoload.php
 
+// Establecer el encabezado para que el cliente sepa que la respuesta es un JSON
+header('Content-Type: application/json');
+
 // Cargar las variables de entorno desde el archivo .env (que está en la raíz del proyecto)
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
+
+// Configurar la zona horaria desde el archivo .env, si está definida
+$timezone = $_ENV['APP_TIMEZONE'] ?? 'UTC'; // Si no está definida, usa UTC como predeterminado
+date_default_timezone_set($timezone); // Establecer la zona horaria
 
 // Configurar las credenciales de la base de datos usando las variables de entorno
 $host = $_ENV['DB_HOST'] ?? null;

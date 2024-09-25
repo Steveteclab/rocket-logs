@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Frontend</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>API Frontend</h1>
+    </header>
+
+    <!-- Formulario de inicio de sesión -->
+    <section id="auth-section">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <p id="auth-message"></p>
+    </section>
+
+    <section id="events-section">
+      <h2>Eventos</h2>
+      <button id="fetch-events">Obtener Eventos</button>
+      <ul id="events-list"></ul>
+    </section>
+
+    <section id="logs-section">
+      <h2>Logs de Errores</h2>
+      <button id="fetch-logs">Obtener Logs de Errores</button>
+      <ul id="logs-list"></ul>
+    </section>
+
+  </div>
+
+  <!-- Coloca el script justo antes del cierre del body -->
+  <script src="scripts.js"></script>
+</body>
+</html>
